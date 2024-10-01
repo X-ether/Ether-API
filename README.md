@@ -1,7 +1,7 @@
-# Chat API
+# Ether API
 
 > [!NOTE]
-> 本项目为开源项目，在[One API](https://github.com/songquanpeng/one-api)与[New API](https://github.com/Calcium-Ion/new-api)的基础上进行二次开发，感谢原作者的无私奉献。
+> 本项目为开源项目，在[Chat API]([https://github.com/songquanpeng/one-api](https://github.com/ai365vip/chat-api))的基础上进行二次开发，感谢原作者的无私奉献。
 > 使用者必须在遵循 OpenAI 的[使用条款](https://openai.com/policies/terms-of-use)以及**法律法规**的情况下使用，不得用于非法用途。
 
 > [!WARNING]
@@ -10,35 +10,7 @@
 
 ## 此分叉版本的主要变更
 
-1. 全新的UI界面，C端与管理端 (/admin)
-2. 支持在线支付按钮的启用关闭
-3. 支持普通用户自行选择令牌按倍率、按次计费（倍率和按次全启用）
-4. 支持令牌分组，**模型限制**
-5. 支持WxPusher消息推送，在线充值通知
-6. 支持通知更换邮箱
-7. 支持渠道自启时间设置
-8. 支持显示新用户注册时间
-9. 管理员支持开启日志详情
-10. 支持自定义**网站描述**（TG网站预览）
-11. 支持数据面板统计
-12. 支持新用户设置默认分组
-13. 支持充值用户设置默认分组（充值后自动切换）
-14. 支持邀请用户充值返利（后台设置返利百分比。最低提现额度）
-15. 支持设置普号渠道每分钟限制使用3次(每个模型三次 自动切换渠道)
-16. 支持渠道显示可用模型，可自定义排序
-17. 支持gpt-4v通用格式（添加模型gpt-4-vision，对话中放入图像链接即可）
-18. 支持按日期设置充值不同倍率
-19. 支持分销查询页[chat-api-key-tool](https://github.com/ai365vip/chat-api-key-tool)（消费、MJ、设置发卡站）
-20. 支持渠道添加自定义请求头
-21. 支持令牌添加自定义后缀内容
-22. 支持midjourney-proxy-plus(支持/mj-turbo/mj、/mj-relax/mj，对应模型midjourney-turbo、midjourney-relax)
-23. 支持设置充值数量对应折扣
-24. 支持渠道复制、批量编辑
-25. 支持Claude原始请求方式
-26. 支持开启上游空返回重试
-27. 支持日志显示RPM、TPM
-28. 支持GCP-Claude，使用rt、密钥两种方式
-29. 支持单渠道设置代理
+1.Linux Do Connect 登录
 
 ## 部署
 
