@@ -77,6 +77,20 @@ const SystemSetting = () => {
 
     const updateOption = async (key, value) => {
         setLoading(true);
+        switch (key) {
+            case 'PasswordLoginEnabled':
+            case 'PasswordRegisterEnabled':
+            case 'EmailVerificationEnabled':
+            case 'GitHubOAuthEnabled':
+            case 'LinuxDoOAuthEnabled'::
+            case 'TurnstileCheckEnabled':
+            case 'EmailDomainRestrictionEnabled':
+            case 'RegisterEnabled':
+                value = inputs[key] === 'true' ? 'false' : 'true';
+                break;
+            default:
+                break;
+        }
         const res = await API.put('/api/option/', {
           key,
           value
@@ -103,8 +117,38 @@ const SystemSetting = () => {
   };
     
 
-    const handleInputChange = (name, value) => {
-        setInputs((prevInputs) => ({ ...prevInputs, [name]: value }));
+   const handleInputChange = async (e, { name, value }) => {
+        if (name === 'PasswordLoginEnabled' && inputs[name] === 'true') {
+            // block disabling password login
+            setShowPasswordWarningModal(true);
+            return;
+        }
+        if (
+            name === 'Notice' ||
+            name.startsWith('SMTP') ||
+            name === 'ServerAddress' ||
+            name === 'EpayId' ||
+            name === 'EpayKey' ||
+            name === 'Price' ||
+            name === 'PayAddress' ||
+            name === 'GitHubClientId' ||
+            name === 'GitHubClientSecret' ||
+            name === 'LinuxDoClientId' ||
+            name === 'LinuxDoClientSecret' ||
+            name === 'WeChatServerAddress' ||
+            name === 'WeChatServerToken' ||
+            name === 'WeChatAccountQRCodeImageURL' ||
+            name === 'TurnstileSiteKey' ||
+            name === 'TurnstileSecretKey' ||
+            name === 'EmailDomainWhitelist' ||
+            name === 'TopupGroupRatio' ||
+            name === 'TelegramBotToken' ||
+            name === 'TelegramBotName'
+        ) {
+            setInputs((inputs) => ({ ...inputs, [name]: value }));
+        } else {
+            await updateOption(name, value);
+        }
     };
 
     const handleCheckboxChange = (name, checked) => {
