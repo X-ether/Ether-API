@@ -11,6 +11,7 @@ import EditUser from './pages/User/EditUser';
 import { API, getLogo,isAdmin, getSystemName, showError, showNotice } from './helpers';
 import PasswordResetForm from './components/PasswordResetForm';
 import GitHubOAuth from './components/GitHubOAuth';
+import LinuxDoOAuth from "./components/LinuxDoOAuth";
 import PasswordResetConfirm from './components/PasswordResetConfirm';
 import { UserContext } from './context/User';
 import { StatusContext } from './context/Status';
