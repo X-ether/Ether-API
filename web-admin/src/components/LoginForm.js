@@ -9,6 +9,7 @@ import Title from "@douyinfe/semi-ui/lib/es/typography/title";
 import Text from "@douyinfe/semi-ui/lib/es/typography/text";
 
 import {IconGithubLogo} from '@douyinfe/semi-icons';
+import LinuxDoIcon from './LinuxDoIcon';
 
 const LoginForm = () => {
     const [inputs, setInputs] = useState({
