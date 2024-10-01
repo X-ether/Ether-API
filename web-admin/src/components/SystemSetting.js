@@ -333,6 +333,14 @@ const SystemSetting = () => {
                                 <Typography.Text>允许通过 GitHub 账户登录 & 注册</Typography.Text>
                             </div>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                 <Checkbox
+                                    checked={inputs.LinuxDoOAuthEnabled === 'true'}
+                                    name='LinuxDoOAuthEnabled'
+                                    onChange={(e) => handleCheckboxChange('LinuxDoOAuthEnabled', e.target.checked)}
+                                />
+                                <Typography.Text>允许通过 GitHub 账户登录 & 注册</Typography.Text>
+                            </div>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                                 <Checkbox
                                     checked={inputs.WeChatAuthEnabled === 'true'}
                                     name='WeChatAuthEnabled'
