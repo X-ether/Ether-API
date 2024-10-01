@@ -127,6 +127,31 @@ const LoginForm = () => {
                                         忘记密码 <Link to='/admin/reset'>点击重置</Link>
                                     </Text>
                                 </div>
+                                 {status.github_oauth || status.linuxdo_oauth || status.wechat_login || status.telegram_oauth ? (
+                                    <>
+                                        <Divider margin='12px' align='center'>
+                                            第三方登录
+                                        </Divider>
+                                        <div style={{ display: 'flex', justifyContent: 'center', marginTop: 20 }}>
+                                            {status.github_oauth ? (
+                                                <Button
+                                                    type='primary'
+                                                    icon={<IconGithubLogo />}
+                                                    onClick={() => onGitHubOAuthClicked(status.github_client_id)}
+                                                />
+                                            ) : (
+                                                <></>
+                                            )}
+                                            {status.linuxdo_oauth ? (
+                                                <Button
+                                                    type='primary'
+                                                    icon={<LinuxDoIcon />}
+                                                    style={{color: '#000'}}
+                                                    onClick={() => onLinuxDoOAuthClicked(status.linuxdo_client_id)}
+                                                />
+                                            ) : (
+                                                <></>
+                                            )}
                             </Card>
                             {turnstileEnabled ? (
                                 <div style={{display: 'flex', justifyContent: 'center', marginTop: 20}}>
