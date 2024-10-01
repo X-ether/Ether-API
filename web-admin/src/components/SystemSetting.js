@@ -104,40 +104,9 @@ const SystemSetting = () => {
   };
     
 
-   const handleInputChange = async (e, { name, value }) => {
-        if (name === 'PasswordLoginEnabled' && inputs[name] === 'true') {
-            // block disabling password login
-            setShowPasswordWarningModal(true);
-            return;
-        }
-        if (
-            name === 'Notice' ||
-            name.startsWith('SMTP') ||
-            name === 'ServerAddress' ||
-            name === 'EpayId' ||
-            name === 'EpayKey' ||
-            name === 'Price' ||
-            name === 'PayAddress' ||
-            name === 'GitHubClientId' ||
-            name === 'GitHubClientSecret' ||
-            name === 'LinuxDoClientId' ||
-            name === 'LinuxDoClientSecret' ||
-            name === 'WeChatServerAddress' ||
-            name === 'WeChatServerToken' ||
-            name === 'WeChatAccountQRCodeImageURL' ||
-            name === 'TurnstileSiteKey' ||
-            name === 'TurnstileSecretKey' ||
-            name === 'EmailDomainWhitelist' ||
-            name === 'TopupGroupRatio' ||
-            name === 'TelegramBotToken' ||
-            name === 'TelegramBotName'
-        ) {
-            setInputs((inputs) => ({ ...inputs, [name]: value }));
-        } else {
-            await updateOption(name, value);
-        }
-    };
-
+      const handleInputChange = (name, value) => {
+        setInputs((prevInputs) => ({ ...prevInputs, [name]: value }));
+          
     const handleCheckboxChange = (name, checked) => {
         setInputs((prevInputs) => ({ ...prevInputs, [name]: checked ? 'true' : 'false' }));
     };
