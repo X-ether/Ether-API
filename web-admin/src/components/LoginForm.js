@@ -127,7 +127,7 @@ const LoginForm = () => {
                                         忘记密码 <Link to='/admin/reset'>点击重置</Link>
                                     </Text>
                                 </div>
-                                 {status.github_oauth || status.linuxdo_oauth || status.wechat_login || status.telegram_oauth ? (
+                                 {status.github_oauth || status.linuxdo_oauth ? (
                                     <>
                                         <Divider margin='12px' align='center'>
                                             第三方登录
