@@ -42,6 +42,14 @@ const GitHubOAuth = () => {
   };
 
   useEffect(() => {
+     let error = searchParams.get('error');
+    if (error) {
+      let errorDescription = searchParams.get('error_description');
+      showError(`授权错误：${error}: ${errorDescription}`);
+      navigate('/setting');
+      return;
+    }
+
     let code = searchParams.get('code');
     let state = searchParams.get('state');
     sendCode(code, state, 0).then();
