@@ -14,7 +14,8 @@ const GitHubOAuth = () => {
   let navigate = useNavigate();
 
   const sendCode = async (code, state, count) => {
-    const res = await API.get(`/api/oauth/github?code=${code}&state=${state}`);
+    let aff = localStorage.getItem('aff');
+    const res = await API.get(`/api/oauth/github?code=${code}&state=${state}&aff=${aff}`);
     const { success, message, data } = res.data;
     if (success) {
       if (message === 'bind') {
