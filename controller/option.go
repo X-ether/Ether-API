@@ -85,6 +85,14 @@ func UpdateOption(c *gin.Context) {
 			})
 			return
 		}
+	case "LinuxDoOAuthEnabled":
+		if option.Value == "true" && common.LinuxDoClientId == "" {
+			c.JSON(http.StatusOK, gin.H{
+				"success": false,
+				"message": "无法启用 LINUX DO OAuth，请先填入 LINUX DO Client Id 以及 LINUX DO Client Secret！",
+			})
+			return
+		}
 	case "WeChatAuthEnabled":
 		if option.Value == "true" && config.WeChatServerAddress == "" {
 			c.JSON(http.StatusOK, gin.H{
