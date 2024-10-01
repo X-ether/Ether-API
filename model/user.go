@@ -472,6 +472,10 @@ func IsGitHubIdAlreadyTaken(githubId string) bool {
 	return DB.Where("github_id = ?", githubId).Find(&User{}).RowsAffected == 1
 }
 
+func IsLinuxDoIdAlreadyTaken(linuxdoId string) bool {
+	return DB.Where("linuxdo_id = ?", linuxdoId).Find(&User{}).RowsAffected == 1
+}
+
 func IsUsernameAlreadyTaken(username string) bool {
 	return DB.Where("username = ?", username).Find(&User{}).RowsAffected == 1
 }
