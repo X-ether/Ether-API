@@ -77,20 +77,7 @@ const SystemSetting = () => {
 
     const updateOption = async (key, value) => {
         setLoading(true);
-        switch (key) {
-            case 'PasswordLoginEnabled':
-            case 'PasswordRegisterEnabled':
-            case 'EmailVerificationEnabled':
-            case 'GitHubOAuthEnabled':
-            case 'LinuxDoOAuthEnabled'::
-            case 'TurnstileCheckEnabled':
-            case 'EmailDomainRestrictionEnabled':
-            case 'RegisterEnabled':
-                value = inputs[key] === 'true' ? 'false' : 'true';
-                break;
-            default:
-                break;
-        }
+        
         const res = await API.put('/api/option/', {
           key,
           value
