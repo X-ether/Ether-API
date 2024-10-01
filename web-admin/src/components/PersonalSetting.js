@@ -3,7 +3,7 @@ import {Link, useNavigate} from 'react-router-dom';
 import {API, copy, isRoot, showError, showInfo, showNotice, showSuccess} from '../helpers';
 import Turnstile from 'react-turnstile';
 import {UserContext} from '../context/User';
-import {onGitHubOAuthClicked} from './utils';
+import {onGitHubOAuthClicked, onLinuxDoOAuthClicked} from './utils';
 import {
     Avatar, Banner,
     Button,
