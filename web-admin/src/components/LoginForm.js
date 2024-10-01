@@ -2,7 +2,7 @@ import React, {useContext, useEffect, useState} from 'react';
 import {Link, useNavigate, useSearchParams} from 'react-router-dom';
 import {UserContext} from '../context/User';
 import {API, getLogo,isAdmin, isMobile, showError, showInfo, showSuccess, showWarning} from '../helpers';
-import {onGitHubOAuthClicked} from './utils';
+import {onGitHubOAuthClicked, onLinuxDoOAuthClicked } from './utils';
 import Turnstile from "react-turnstile";
 import {Layout, Card, Image, Form, Button, Divider, Modal} from "@douyinfe/semi-ui";
 import Title from "@douyinfe/semi-ui/lib/es/typography/title";
